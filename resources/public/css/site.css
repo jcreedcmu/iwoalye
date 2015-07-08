@@ -1,0 +1,37 @@
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 72px;
+
+
+
+}
+
+td, textarea {
+    font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+td {
+    vertical-align: top;
+    width: 250px;
+    height: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: #09f;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error {
+    background-color: #e77;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
