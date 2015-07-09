@@ -76,16 +76,24 @@
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
                                               :compiler {:main "iwoalye.dev"
                                                          :source-map true}}
-}
-}}
+                                        }
+                               }}
 
-             :uberjar {:hooks [leiningen.cljsbuild minify-assets.plugin/hooks]
-                       :env {:production true}
-                       :aot :all
-                       :omit-source true
-                       :cljsbuild {:jar true
-                                   :builds {:app
-                                             {:source-paths ["env/prod/cljs"]
-                                              :compiler
-                                              {:optimizations :advanced
-                                               :pretty-print false}}}}}})
+
+             :prod {
+
+                    :dependencies [[leiningen-core "2.5.1"]
+                                   [lein-figwheel "0.3.5"]]
+
+                    :source-paths ["env/prod/clj"]
+                    :plugins [[lein-figwheel "0.3.3"]
+                              [lein-cljsbuild "1.0.6"]]
+
+                    :cljsbuild {:builds {:app {:source-paths ["env/prod/cljs"]
+                                               :compiler {:main "iwoalye.prod"
+                                                          :optimizations :advanced
+                                                          :source-map "resources/public/js/app.js.map"}}
+                                         }
+                                }}
+
+         })

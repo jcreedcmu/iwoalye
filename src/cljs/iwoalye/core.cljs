@@ -102,15 +102,27 @@
 
 (defn terms-comp [qas]
   (let [counts (get-term-counts qas)]
+
     [:div.terms (map-indexed (fn [ix c]
-                           ^{:key ix}
-                           [:div.story-row
-                            [:div.story-item (:term c)]
-                            [:div.story-item (:count c)
-                             (if (< ix (count tgt-term-counts))
-                               (str "/" (tgt-term-counts ix))
-                               "")]])
-                         counts)]))
+                               (let [actual (:count c)
+                                     tgt (tgt-term-counts ix)
+                                     row-class (cond
+                                                 (< actual tgt) nil
+                                                 (> actual tgt) "bad"
+                                                 true "quiet")]
+                                 ^{:key ix}
+                                 [:div.story-row
+                                  [:div.story-item [:span {:class row-class} (:term c)]]
+                                  [:div.story-item
+
+
+                                   (if (< ix (count tgt-term-counts))
+
+                                     [:span
+                                      {:class row-class}
+                                      actual "/" tgt]
+                                     [:span.bad (:count c)])]]))
+                             counts)]))
 
 (defn interface [satm]
   (let [state @satm

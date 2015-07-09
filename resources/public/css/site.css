@@ -1,32 +1,7 @@
-/* latin */
-@font-face {
-  font-family: 'Pompiere';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Pompiere '), local('Pompiere-Regular'), url(http://fonts.gstatic.com/s/pompiere/v6/mwrKIrrwFdsa6WVUljlH1vesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Arbutus Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arbutus Slab'), local('ArbutusSlab-Regular'), url(http://fonts.gstatic.com/s/arbutusslab/v4/6k3Yp6iS9l4jRIpynA8qMz0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Arbutus Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Arbutus Slab'), local('ArbutusSlab-Regular'), url(http://fonts.gstatic.com/s/arbutusslab/v4/6k3Yp6iS9l4jRIpynA8qM-gdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-
 body {
     margin: 0 0;
     background-color: #fea;
+    color: #333;
 }
 
 .flex-container {
@@ -41,7 +16,7 @@ body {
 * {
     font-family: 'Arbutus Slab';
     font-size: 18px;
-    color: #333;
+
 }
 
 textarea { width: 100% }
@@ -124,3 +99,6 @@ button {
 .bracketed {
     color: #07d;
 }
+
+.bad { color: #f44; }
+.quiet { color: #bbd; }
